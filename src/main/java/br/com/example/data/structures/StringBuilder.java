@@ -21,4 +21,8 @@ public class StringBuilder {
                 .reduce((str1, str2) -> str1 + str2)
                 .orElse(null);
     }
+
+    public boolean contains(String string) {
+        return this.arrayList.get(string) != null;
+    }
 }
