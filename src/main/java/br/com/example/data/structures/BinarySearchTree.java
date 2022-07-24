@@ -1,10 +1,15 @@
 package br.com.example.data.structures;
 
-public class BinaryTree {
+import java.util.ArrayList;
+import java.util.List;
+
+public class BinarySearchTree {
+
+    private List<Integer> dataTraversed;
 
     private Node root;
 
-    static class Node {
+    class Node {
 
         private final int data;
         private Node left, right;
@@ -56,6 +61,7 @@ public class BinaryTree {
 
         private void visit(Node node) {
             System.out.println(node.data);
+            BinarySearchTree.this.dataTraversed.add(node.data);
         }
 
         private void inOrder(Node node) {
@@ -95,16 +101,22 @@ public class BinaryTree {
         this.root = node;
     }
 
-    public void inOrder() {
+    public List<Integer> inOrder() {
+        this.dataTraversed = new ArrayList<>();
         this.root.inOrder(this.root);
+        return this.dataTraversed;
     }
 
-    public void preOrder() {
+    public List<Integer> preOrder() {
+        this.dataTraversed = new ArrayList<>();
         this.root.preOrder(this.root);
+        return this.dataTraversed;
     }
 
-    public void posOrder() {
+    public List<Integer> posOrder() {
+        this.dataTraversed = new ArrayList<>();
         this.root.posOrder(this.root);
+        return this.dataTraversed;
     }
 
     public boolean contains(int data) {
