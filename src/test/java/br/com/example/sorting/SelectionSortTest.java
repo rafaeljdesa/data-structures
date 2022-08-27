@@ -4,13 +4,13 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BubbleSortTest {
+public class SelectionSortTest {
 
     @Test
     public void sortTest() {
         int[] data = { 2, 1, 5, 3, 6, 4 };
 
-        BubbleSort.sort(data);
+        SelectionSort.sort(data);
 
         int[] expected = { 1, 2, 3, 4, 5, 6 };
         assertArrayEquals(expected, data);
@@ -25,4 +25,5 @@ public class BubbleSortTest {
         int[] expected = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
         assertArrayEquals(expected, data);
     }
+
 }
